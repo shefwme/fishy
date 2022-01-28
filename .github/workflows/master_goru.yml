@@ -11,10 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
-    defaults:
-      run:
-        working-directory: ./server
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -24,7 +21,7 @@ jobs:
           node-version: '14.x'
       - name: npm install, build, and test
         run: |
-          working-directory: ./server
+          working-directory: server
           npm install
           npm run build --if-present
           npm run test --if-present
