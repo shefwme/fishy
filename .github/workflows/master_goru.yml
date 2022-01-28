@@ -11,8 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    working-directory: server 
+    runs-on: ubuntu-latest 
     steps:
       - uses: actions/checkout@v2
 
@@ -20,7 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-
+        working-directory: server
       - name: npm install, build, and test
         run: |
           npm install
